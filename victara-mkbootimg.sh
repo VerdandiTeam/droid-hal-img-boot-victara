@@ -4,7 +4,7 @@ set -e
 INITRD=$1
 OUT=$2
 
-CMDLINE='console=tty0 systemd.show_status=false msm.allow_vram_carveout=1 msm.vram=128m mem_sleep_default=s2idle'
+CMDLINE='console=tty0 systemd.show_status=false loglevel=1 vt.global_cursor_default=0 msm.allow_vram_carveout=1 msm.vram=128m mem_sleep_default=s2idle'
 DTB=qcom-msm8974pro-motorola-victara.dtb
 
 cat /boot/zImage /boot/$DTB > zImage-dtb

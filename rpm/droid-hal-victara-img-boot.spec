@@ -18,7 +18,11 @@ install -D -m 644 /boot/qcom-msm8974pro-motorola-victara.dtb $RPM_BUILD_ROOT/boo
 install -D -m 644 initrd.img $RPM_BUILD_ROOT/boot/sailfish/initrd.img\
 install -D -m 644 extlinux.conf $RPM_BUILD_ROOT/boot/extlinux/extlinux.conf\
 install -D -m 644 lk2nd.img $RPM_BUILD_ROOT/boot/lk2nd.img\
-%{?__spec_install_post}
+install -D -m 644 logo.bin $RPM_BUILD_ROOT/boot/logo.bin\
+%%{?__debug_package:%%{__debug_install_post}}\
+%%{__arch_install_post}\
+%%{__os_install_post}\
+%{nil}
 
 BuildRequires:  python3-base
 
@@ -44,3 +48,4 @@ fi
 /boot/sailfish/initrd.img
 /boot/extlinux/extlinux.conf
 /boot/lk2nd.img
+/boot/logo.bin
